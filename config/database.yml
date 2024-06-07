@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: draft
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: draft_api_development
+
+test:
+  <<: *default
+  database: draft_api_test
+# production:
+#   <<: *default
+#   database: sports_ladder_api_production
+#   username: myappuser
+#   password: <%= ENV['SPORTS_LADDER_DATABASE_PASSWORD'] %>
